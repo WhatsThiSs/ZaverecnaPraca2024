@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dotaznik1.css">
+    <title>Dotazník 1</title>
+</head>
+<body>
+    <div id="questionnaire-container" class="container">
+        <h1>Dotazník 1</h1>
+        <form id="question-form">
+
+            <div class="question">
+                <label for="name">Vaše meno:</label>
+                <input type="text" id="name" name="name" placeholder="(aspoň 3 písmená)">
+            </div>
+
+            <div class="question">
+                <label for="age">Vek:</label>
+                <input type="number" id="age" name="age" placeholder="">
+            </div>
+
+            <div class="question">
+                <label for="gender">Pohlavie:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Muž</option>
+                    <option value="female">Žena</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="handedness">Ste pravák alebo ľavák?</label>
+                <select id="handedness" name="handedness">
+                    <option value="right">Pravák</option>
+                    <option value="left">Ľavák</option>
+                </select>
+            </div>
+            
+            <div class="question" id="expectation-words-container">
+                <label for="expectation-words">Vyberte slová, ktoré by ste použili na popis svojho očakávania ohľadom tejto hry pred začatím:</label>
+                <div>
+                    <input type="checkbox" id="excitement" name="expectation-words" value="excitement">
+                    <label for="excitement">Vzrušenie</label>
+            
+                    <input type="checkbox" id="curiosity" name="expectation-words" value="curiosity">
+                    <label for="curiosity">Zvedavosť</label>
+            
+                    <input type="checkbox" id="anxiety" name="expectation-words" value="anxiety">
+                    <label for="anxiety">Úzkosť</label>
+            
+                </div>
+            </div>
+
+            <div class="question" id="current-emotion-container">
+                <label for="current-emotion" id="current-emotion-label">Ako hodnotíte svoj aktuálny emocionálny stav?</label>
+                <input type="range" id="current-emotion" name="current-emotion" min="0" max="10" step="1" value="5">
+                <div id="emoji-container"></div>
+            </div>
+
+            
+
+            <button type="button" id="submit-button">Odoslať</button>
+        </form>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const submitButton = document.getElementById('submit-button');
+                const emojiContainer = document.getElementById('emoji-container');
+                const currentEmotionSlider = document.getElementById('current-emotion');
+                const howOftenValue = document.getElementById('howoften-value');
+
+                // Aktualizácia smajlíka pri posunutí slideru pre aktuálny emocionálny stav
+                currentEmotionSlider.addEventListener('input', function () {
+                    updateEmoji();
+                });
+
+                
+
+                submitButton.addEventListener('click', function () {
+                    const name = document.getElementById('name').value;
+                    const age = document.getElementById('age').value;
+                    const gender = document.getElementById('gender').value;
+                    const handedness = document.getElementById('handedness').value;
+                    const currentEmotion = currentEmotionSlider.value;
+
+                    if (name.length >= 3 && age >= 5 && age <= 100 && gender && handedness && currentEmotion) {
+                        // Všetky otázky musia byť zodpovedané 
+                        const userData = {
+                            name: name,
+                            age: age,
+                            gender: gender,
+                            handedness: handedness,
+                            currentEmotion: currentEmotion
+                        };
+
+                        setTimeout(function () {
+                            window.location.href = 'game.html';
+                        }, 1000); // Oneskorenie som pridal kvôli výpisu do konzole
+                    } else {
+                        alert('Vyplňte všetky otázky.');
+                    }
+                });
+
+                // Funkcia na aktualizáciu smajlíka pre aktuálny emocionálny stav
+                function updateEmoji() {
+                    const currentEmotion = currentEmotionSlider.value;
+                    emojiContainer.innerHTML = getEmoji(currentEmotion);
+                }
+
+                // Funkcia na získanie smajlíka podľa hodnoty
+                function getEmoji(emotionValue) {
+                    if (emotionValue <= 1) {
+                        return '😢'; // Plačúci smajlík
+                    } else if (emotionValue <= 3) {
+                        return '😞'; // Smutný smajlík
+                    } else if (emotionValue <= 6) {
+                        return '😐'; // Neutrálny smajlík
+                    } else if (emotionValue <= 8) {
+                        return '🙂'; // Usmiaty smajlík
+                    } else {
+                        return '😊'; // Šťastný smajlík
+                    }
+                }
+
+                // Funkcia na získanie textu podľa hodnoty pre otázku Ako často hrávate videohry?
+                function getHowOftenText(value) {
+                    switch (value) {
+                        case '1':
+                            return 'Vôbec';
+                        case '2':
+                            return 'Skoro vôbec';
+                        case '3':
+                            return 'Pár krát do mesiaca';
+                        case '4':
+                            return 'Pár krát do týždňa';
+                        case '5':
+                            return 'Každý deň';
+                        default:
+                            return '';
+                    }   
+                }
+
+                function handleButtonClick(button) {
+            // Získajte všetky tlačidlá v rámci rodičovského kontajnera
+            const buttons = button.parentElement.querySelectorAll('button');
+        
+            // Odober všetkým tlačidlám triedu active
+            buttons.forEach(btn => btn.classList.remove('active'));
+        
+            // Pridaj aktívnu triedu len stlačenému tlačidlu
+            button.classList.add('active');
+        }
+
+            });
+        </script>
+    </div>
+</body>
+</html>

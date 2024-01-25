@@ -1,0 +1,35 @@
+function moveImages() {
+    images.forEach(img => {
+        img.x += img.dx;
+        img.y += img.dy;
+
+        // Kontrola kolízií s okrajmi canvasu
+        if (img.x < 0 || img.x > canvas.width - 50) {
+            img.dx = -img.dx;
+        }
+        if (img.y < 0 || img.y > canvas.height - 50) {
+            img.dy = -img.dy;
+        }
+
+        // Kontrola vzájomných kolízií obrázkov
+        images.forEach(otherImg => {
+            if (img !== otherImg) {
+                if (
+                    img.x < otherImg.x + 50 &&
+                    img.x + 50 > otherImg.x &&
+                    img.y < otherImg.y + 50 &&
+                    img.y + 50 > otherImg.y
+                ) {
+                    // zmena smeru pre oba obrázky v pripade dotyku
+                    img.dx = -img.dx;
+                    img.dy = -img.dy;
+
+                    otherImg.dx = -otherImg.dx;
+                    otherImg.dy = -otherImg.dy;
+                }
+            }
+        });
+    });
+
+    drawImages();
+}

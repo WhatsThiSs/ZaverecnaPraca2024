@@ -1,0 +1,179 @@
+/* dotaznik1.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    color: #333;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+.question label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.answer {
+    margin-bottom: 10px;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+}
+
+#howoften-container,
+#current-emotion-container {
+    margin-bottom: 20px; /* Väčšia medzera medzi otázkami */
+}
+
+#howoften-label,
+#current-emotion-label {
+    top: -20px; /* Poloha hodnôt nad sliderom */
+    left: 0;
+   
+}
+
+#howoften,
+#current-emotion {
+    width: 100%;
+    margin-top: 10px; /* Odstup od hodnôt */
+    height: 20px; /* Väčší slider */
+    appearance: none;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    border-radius: 10px; /* Zaoblené rohy */
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#howoften::-webkit-slider-thumb,
+#current-emotion::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px; /* Väčší thumb */
+    height: 25px; /* Väčší thumb */
+    background: #4caf50;
+    border-radius: 50%; /* Kruhový thumb */
+    cursor: pointer;
+}
+
+#howoften::-moz-range-thumb,
+#current-emotion::-moz-range-thumb {
+    width: 25px; /* Väčší thumb */
+    height: 25px; /* Väčší thumb */
+    background: #4caf50;
+    border: none;
+    border-radius: 50%; /* Kruhový thumb */
+    cursor: pointer;
+}
+
+#emoji-container {
+    font-size: 58px; /* Prispôsobte veľkosť podľa potreby */
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#expectation-words-container {
+    margin-top: 20px;
+  }
+  
+  #expectation-words-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  #expectation-words-container div {
+    display: flex;
+  }
+  
+  #expectation-words-container input {
+    margin-right: 5px;
+  }
+  #camera-consent-container {
+    margin-top: 20px;
+}
+
+#camera-consent-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#camera-consent-container .toggle-buttons {
+    display: flex;
+}
+
+#camera-consent-container .toggle-buttons button {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#camera-consent-container .toggle-buttons button:hover {
+    background-color: #f5f5f5;
+}
+
+#camera-consent-container .toggle-buttons button.active {
+    background-color: #4CAF50;
+    color: #fff;
+    border-color: #4CAF50;
+}
+
+
+
+

@@ -1,0 +1,35 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Klikacia Hra</title>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Inštrukcie k dotazníkom aj hre</h1>
+        <p>Jedná sa o jednoduchú klikaciu hru s dotazníkom pred odohraním a po odohraní.</p>
+        <p>Cielom tohto experimentu je vyplniť dotazník o aktuálnom emocionálnom stave odohrať jednoduchú klikaciu hru a vyplniť dotazník po odohraní...</p>
+        <p>Na odohranie hry máte 60sekúnd cielom je získať čo najväčší počet bodov za daný čas.</p>
+    
+        
+        <button id="questionnaire-button">Dotazník 1</button>
+        
+
+
+        <script src="/game.js"></script>
+         <script>
+           
+            const questionnaireButton = document.getElementById('questionnaire-button');
+            questionnaireButton.addEventListener('click', function () {
+                
+                window.location.href = 'dotaznik1.html';
+            });
+
+        </script>
+    </div>
+</body>
+</html>

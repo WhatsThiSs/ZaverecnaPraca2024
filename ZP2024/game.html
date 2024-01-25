@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/game.css">
+
+    <title>Klikacia Hra</title>
+
+</head>
+
+<body>
+    <div id="game-container">
+        <div id="timer-container">
+           <!-- <p id="timer">Čas: 60</p> -->
+        </div>
+        <div id="level-container">Level 1</div>
+        <div id="score-container">Skóre: 0</div>
+
+        <button id="start-button">Štart</button>
+        <canvas id="game-canvas" width="1000" height="600"></canvas>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/game.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const startButton = document.getElementById('start-button');
+                const timerContainer = document.getElementById('timer-container');
+           
+
+                startButton.addEventListener('click', function () {
+                    startButton.classList.add('hidden');
+                   
+                });
+
+             
+            });
+        </script>
+    </div>
+</body>
+
+</html>

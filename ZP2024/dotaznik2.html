@@ -1,0 +1,70 @@
+<!-- dotaznik2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dotaznik2.css">
+    <title>Dotazník</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Dotazník po odohraní hry</h1>
+
+        <div class="question">
+            <p>1. Ako ste sa cítili počas hrania hry?</p>
+            <select id="emotion" name="emotion">
+                <option value="very-happy">Veľmi šťastne</option>
+                <option value="happy">Šťastne</option>
+                <option value="neutral">Neutrálne</option>
+                <option value="unhappy">Nešťastne</option>
+                <option value="very-unhappy">Veľmi nešťastne</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>2. Aká náročná bola pre vás hra?</p>
+            <select id="difficulty" name="difficulty">
+                <option value="very-easy">Veľmi ľahká</option>
+                <option value="easy">Ľahká</option>
+                <option value="neutral">Stredne náročná</option>
+                <option value="difficult">Náročná</option>
+                <option value="very-difficult">Veľmi náročná</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>3. Ako by ste hodnotili úroveň vášho emocionálneho vzrušenia alebo aktivity po dokončení hry?</p>
+            <input type="range" id="post-game-emotion" name="post-game-emotion" min="0" max="10" step="1" value="5">
+            <!-- sem môžete pridať ďalšie vstupy podľa potreby -->
+        </div>
+
+        <div class="question">
+            <p>4. Ktoré slová by ste použili na popis vášho celkového dojmu po dokončení hry?</p>
+            <input type="checkbox" id="excitement" name="post-game-words" value="excitement">
+            <label for="excitement">Vzrušenie</label>
+
+            <input type="checkbox" id="curiosity" name="post-game-words" value="curiosity">
+            <label for="curiosity">Zvedavosť</label>
+
+            <input type="checkbox" id="anxiety" name="post-game-words" value="anxiety">
+            <label for="anxiety">Úzkosť</label>
+            <!-- sem môžete pridať ďalšie vstupy podľa potreby -->
+        </div>
+
+        <div class="question">
+            <p>6. Zmenila sa vaša nálada v porovnaní s tým, ako ste sa cítili pred hrou?</p>
+            <label for="mood-change-yes">Áno</label>
+            <input type="radio" id="mood-change-yes" name="mood-change" value="yes">
+            
+            <label for="mood-change-no">Nie</label>
+            <input type="radio" id="mood-change-no" name="mood-change" value="no">
+            <!-- sem môžete pridať ďalšie vstupy podľa potreby -->
+        </div>
+
+        <button onclick="submitQuestionnaire()">Odoslať</button>
+    </div>
+
+    <script src="/dotaznik2.js"></script>
+</body>
+</html>

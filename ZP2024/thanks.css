@@ -1,0 +1,44 @@
+/* thanks.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.thanks-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #3498db;
+    font-size: 50px;
+}
+    
+p {
+    color: #555;
+    font-size: 20px;
+}
+
+.thanks-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto; 
+}
+
+button:hover {
+    background-color: #2980b9;
+}
